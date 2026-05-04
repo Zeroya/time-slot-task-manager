@@ -1,5 +1,6 @@
 import {
   WatermarkLine,
+  WatermarkLineSmall,
   WatermarkRoot,
 } from '@/shared/ui/ScreenWatermark/ScreenWatermark.styles'
 
@@ -9,16 +10,8 @@ import {
 export function ScreenWatermark() {
   return (
     <WatermarkRoot aria-hidden>
-      <WatermarkLine component="span" variant="inherit">
-        прости, Соня
-      </WatermarkLine>
-      <WatermarkLine
-        component="span"
-        variant="inherit"
-        sx={{ fontSize: 'clamp(2rem, 9vw, 6.5rem)', opacity: 0.85 }}
-      >
-        целую
-      </WatermarkLine>
+      <WatermarkLine>прости, Соня</WatermarkLine>
+      <WatermarkLineSmall>целую</WatermarkLineSmall>
     </WatermarkRoot>
   )
 }

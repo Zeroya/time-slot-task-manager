@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box } from '@mui/material'
 import { alpha, styled } from '@mui/material/styles'
 
 export const WatermarkRoot = styled(Box)(() => ({
@@ -15,16 +15,30 @@ export const WatermarkRoot = styled(Box)(() => ({
   overflow: 'hidden',
 }))
 
-export const WatermarkLine = styled(Typography)(({ theme }) => ({
+const lineBase = {
   fontWeight: 800,
   lineHeight: 0.95,
-  textAlign: 'center',
+  textAlign: 'center' as const,
   letterSpacing: '-0.04em',
-  userSelect: 'none',
+  userSelect: 'none' as const,
+}
+
+export const WatermarkLine = styled('span')(({ theme }) => ({
+  ...lineBase,
+  fontFamily: theme.typography.fontFamily,
   fontSize: 'clamp(2.5rem, 12vw, 9rem)',
   color: alpha(theme.palette.text.primary, 0.08),
   textShadow: `0 0 40px ${alpha(theme.palette.common.black, 0.04)}`,
   [theme.breakpoints.up('md')]: {
     fontSize: 'clamp(3.5rem, 14vw, 11rem)',
   },
+}))
+
+export const WatermarkLineSmall = styled('span')(({ theme }) => ({
+  ...lineBase,
+  fontFamily: theme.typography.fontFamily,
+  fontSize: 'clamp(2rem, 9vw, 6.5rem)',
+  opacity: 0.85,
+  color: alpha(theme.palette.text.primary, 0.08),
+  textShadow: `0 0 40px ${alpha(theme.palette.common.black, 0.04)}`,
 }))
