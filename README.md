@@ -1,6 +1,7 @@
 # Time-slot Planner (Practice Task)
 
-![Application screenshot](C:/Users/Yan/.cursor/projects/c-programs-interviewProjects-Infostyle-test-task/assets/c__Users_Yan_AppData_Roaming_Cursor_User_workspaceStorage_cb56e523eec199b9d90b97839faf3f86_images_image-84f7265b-93e4-494c-b456-c860a942d341.png)
+<img width="644" height="584" alt="image" src="https://github.com/user-attachments/assets/4d8ee2fe-162d-4fe5-beeb-80443e65badc" />
+
 
 Simple calendar-like task manager for interview practice.
 
