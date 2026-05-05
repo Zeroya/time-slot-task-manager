@@ -1,4 +1,6 @@
-# Time-slot Planner (Practice Task)
+# Time-slot Planner
+
+Deploy: https://zeroya.github.io/time-slot-task-manager/
 
 <img width="644" height="584" alt="image" src="https://github.com/user-attachments/assets/4d8ee2fe-162d-4fe5-beeb-80443e65badc" />
 
