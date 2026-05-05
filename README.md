@@ -1,73 +1,45 @@
-# React + TypeScript + Vite
+# Time-slot Planner (Practice Task)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Application screenshot](C:/Users/Yan/.cursor/projects/c-programs-interviewProjects-Infostyle-test-task/assets/c__Users_Yan_AppData_Roaming_Cursor_User_workspaceStorage_cb56e523eec199b9d90b97839faf3f86_images_image-84f7265b-93e4-494c-b456-c860a942d341.png)
 
-Currently, two official plugins are available:
+Simple calendar-like task manager for interview practice.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What is implemented
 
-## React Compiler
+- Day split into 30-minute time slots
+- Task cards in slots (empty slot if no task)
+- Add, edit, and delete tasks
+- Task statuses based on current time:
+  - `pending` -> `in N min`
+  - `active` -> `In progress`
+  - `done` -> `HH:mm-HH:mm`
+- Auto refresh each minute so statuses and countdown stay актуальными
+- Filters:
+  - single day / period view
+  - date navigation with arrows
+  - jump to today
+  - search by title
+  - hide empty slots
+  - show only active sessions
+  - filter by status (`pending`, `active`, `done`)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+- React + TypeScript + Vite
+- Redux Toolkit (state management)
+- React Hook Form + Zod (forms and validation)
+- MUI (UI and styling)
+- Day.js (date/time operations)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Run locally
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
